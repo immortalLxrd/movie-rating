@@ -12,9 +12,9 @@ const MovieComponent: FunctionComponent<MovieProps> = ({title, img, rate}) => {
 	const [rating, setRating] = useState<number>(rate);
 
 	return (
-		<div className="my-10">
-			<img src={img} alt=""/>
-			<h2 className="text-3xl mt-2">{title}</h2>
+		<div className="my-10 w-64 h-screen m-auto">
+			<img className="w-full h-96 object-cover" src={img} alt=""/>
+			<h2 className="text-2xl mt-2">{title}</h2>
 			<RatingComponent starsCount={5} rating={rating} setRating={setRating}/>
 		</div>
 	);
