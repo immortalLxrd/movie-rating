@@ -5,7 +5,7 @@ import Star from "./UI/Star";
 type RatingProps = {
 	rating: number,
 	starsCount: number,
-	setRating: (arg: any) => any
+	setRating: (arg: number) => void
 }
 
 const createArray = (length: number) => [...Array(length)]
@@ -18,7 +18,7 @@ const RatingComponent: FunctionComponent<RatingProps> = ({starsCount, rating, se
 				<React.Fragment key={i}>
 					<Star
 						selected={rating > i}
-						setSelected={() => (i + 1 === rating) ? setRating(() => i) : setRating(() => i + 1)}
+						setSelected={() => (i + 1 === rating) ? setRating(i) : setRating(i + 1)}
 					/>
 				</React.Fragment>
 			))}
